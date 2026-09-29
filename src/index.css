@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --color-maroon: #62141C;
+  --color-wine: #3A0A0E;
+  --color-cream: #FCFBF8;
+  --color-ivory: #F7F3E8;
+  --color-gold: #D4AF37;
+  --color-antique-gold: #C5A059;
+  --color-charcoal: #201715;
+}
+
+/* Custom premium styles */
+@layer utilities {
+  .font-serif {
+    font-family: "Cormorant Garamond", serif;
+  }
+  .font-sans {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FCFBF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #62141C;
+}
+
+/* Traditional Bengali Motifs */
+.bengali-border {
+  border-image: linear-gradient(to right, #62141C, #C5A059, #62141C) 1;
+}
+
+/* Shimmer animation for luxury gold elements */
+@keyframes gold-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-gold {
+  background: linear-gradient(90deg, #62141C 0%, #C5A059 50%, #62141C 100%);
+  background-size: 200% auto;
+  animation: gold-shimmer 6s linear infinite;
+}
+
+/* Soft transition active state styles */
+.tap-highlight-transparent {
+  -webkit-tap-highlight-color: transparent;
+}
