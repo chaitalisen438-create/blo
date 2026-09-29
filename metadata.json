@@ -2,5 +2,7 @@
   "name": "Sindaram Blouse",
   "description": "Premium Bengali luxury women's blouse boutique. Elegance in every stitch.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

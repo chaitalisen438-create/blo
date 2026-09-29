@@ -157,11 +157,11 @@ export default function FashionPhotoshootCampaign({ onExploreClick }: FashionPho
           <div className="w-12 h-0.5 bg-[#C5A059] mx-auto" />
         </div>
 
-        {/* Cinematic Video Player Container */}
+         {/* Cinematic Video Player Container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Main Simulated Video Frame (9 Cols) */}
-          <div className="lg:col-span-8 relative rounded-2xl overflow-hidden aspect-video bg-black shadow-2xl border border-[#62141C]/10 group">
+          <div className="lg:col-span-8 relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-video bg-black shadow-2xl border border-[#62141C]/10 group">
             
             {/* Shutter Shimmer Flash Overlay */}
             {flashActive && (
@@ -183,15 +183,15 @@ export default function FashionPhotoshootCampaign({ onExploreClick }: FashionPho
             </div>
 
             {/* Camera Viewfinder Overlays (Focus lines, Rec Indicator, Grid) */}
-            <div className="absolute inset-0 pointer-events-none border-[12px] border-black/30 z-20 flex flex-col justify-between p-4">
+            <div className="absolute inset-0 pointer-events-none border-4 sm:border-[12px] border-black/35 z-20 flex flex-col justify-between p-3 sm:p-4">
               
               {/* Top Bar: Rec Dot & Battery */}
-              <div className="flex justify-between items-center text-[10px] text-white/90 font-mono tracking-widest">
+              <div className="flex justify-between items-center text-[9px] sm:text-[10px] text-white/90 font-mono tracking-widest">
                 <div className="flex items-center gap-1.5 bg-black/40 px-2.5 py-1 rounded">
-                  <span className="w-2 h-2 rounded-full bg-red-600 animate-ping" />
+                  <span className="w-2 h-2 rounded-full bg-red-600 animate-ping shrink-0" />
                   <span>REC LIVE</span>
                 </div>
-                <div className="bg-black/40 px-2.5 py-1 rounded">
+                <div className="bg-black/40 px-2.5 py-1 rounded hidden sm:block">
                   {scenes[currentSceneIndex].cameraSettings}
                 </div>
               </div>
@@ -204,20 +204,20 @@ export default function FashionPhotoshootCampaign({ onExploreClick }: FashionPho
               </div>
 
               {/* Bottom Bar: Scene info */}
-              <div className="flex justify-between items-end text-[10px] text-white/90 font-mono z-30">
-                <div className="max-w-[70%] space-y-1 bg-black/50 p-2.5 rounded backdrop-blur-sm border border-white/5">
-                  <span className="text-[#D4AF37] font-bold block text-xs tracking-wider">
+              <div className="flex justify-between items-end text-[9px] sm:text-[10px] text-white/90 font-mono z-30 gap-2">
+                <div className="max-w-full sm:max-w-[70%] space-y-0.5 sm:space-y-1 bg-black/60 p-2 sm:p-2.5 rounded backdrop-blur-sm border border-white/5">
+                  <span className="text-[#D4AF37] font-bold block text-[11px] sm:text-xs tracking-wider">
                     {scenes[currentSceneIndex].title}
                   </span>
-                  <p className="font-sans text-[11px] text-white/80 leading-relaxed font-light line-clamp-2">
+                  <p className="font-sans text-[10px] sm:text-[11px] text-white/80 leading-relaxed font-light line-clamp-1 sm:line-clamp-2 hidden xs:block">
                     {scenes[currentSceneIndex].desc}
                   </p>
                 </div>
 
                 {/* Simulated video playback progress timestamp */}
-                <div className="bg-black/40 px-3 py-1.5 rounded font-mono text-xs flex items-center gap-2">
-                  <Camera className="w-3.5 h-3.5 text-[#C5A059] animate-[spin_5s_infinite_linear]" />
-                  <span>00:{Math.floor(sceneProgress / 5) < 10 ? `0${Math.floor(sceneProgress / 5)}` : Math.floor(sceneProgress / 5)} / 00:20</span>
+                <div className="bg-black/40 px-2 py-1 sm:px-3 sm:py-1.5 rounded font-mono text-[10px] sm:text-xs flex items-center gap-1.5 shrink-0">
+                  <Camera className="w-3.5 h-3.5 text-[#C5A059] animate-[spin_5s_infinite_linear] hidden xs:inline" />
+                  <span>00:{Math.floor(sceneProgress / 5) < 10 ? `0${Math.floor(sceneProgress / 5)}` : Math.floor(sceneProgress / 5)}</span>
                 </div>
               </div>
             </div>
